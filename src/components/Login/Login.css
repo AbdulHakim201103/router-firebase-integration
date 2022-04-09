@@ -1,0 +1,60 @@
+.form-container{
+    width: 40%;
+    margin: 100px auto;
+    background-color:rgba(208, 211, 214, 0.605);
+    box-shadow: 2px 2px 2px rgba(129, 58, 58, 0.822);
+    padding: 30px;
+    border-radius: 15px;
+}
+.form-container h1{
+    color: rgb(57, 34, 27);
+}
+.form-container .form .input-box{
+    width: 60%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.form-container .form .form-btn{
+    width: 65%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: cornflowerblue;
+}
+.form-container .form .form-btn:hover{
+   
+    color: black;
+    background-color: orange;
+}
+.form-container .web-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.form-container .web-login .btn{
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+.form-container .web-login .btn:hover{
+    color: lightseagreen;
+}
+.form-container .web-login .google{
+    background-color: orangered;
+}
+.form-container .web-login .facebook{
+    background-color: rgba(28, 106, 209, 0.761);
+}
+.form-container .web-login .github{
+    background-color: black;
+}
