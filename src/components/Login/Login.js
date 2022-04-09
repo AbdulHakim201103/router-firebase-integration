@@ -1,12 +1,26 @@
+import { getAuth } from 'firebase/auth';
 import React from 'react';
-import useFirebase from '../../hooks/useFirebase';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { useLocation, useNavigate } from 'react-router-dom';
+import app from '../../firebase.init';
 import './Login.css'
+const auth = getAuth(app)
 
 
 const Login = () => {
 
-    const {singInWithGoogle} = useFirebase ()
+    const [signInWithGoogle] = useSignInWithGoogle (auth)
+    const location = useLocation();
+    const navigate = useNavigate();
 
+    const from = location?.state?.from?.pathname || '/';
+
+    const handleGoogleSignIn = () =>{
+        signInWithGoogle()
+        .then (() => {
+            navigate(from, { replace : true })
+        })
+    }
     return (
         <div className='form-container'>
             <h1>Please Login </h1>
@@ -19,7 +33,7 @@ const Login = () => {
             </form>
             <hr />
             <div className='web-login'>
-                <button onClick={singInWithGoogle} className='google btn'>Google</button>
+                <button onClick={handleGoogleSignIn} className='google btn'>Google</button>
                 <br />
                 <button className='facebook btn'>Facebook</button>
                 <br />
